@@ -17,9 +17,6 @@ app.use(express.json());
 // API routes
 app.use('/api/sort', sortingRoutes);
 
-// Serve frontend (optional – only if you've added client build)
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
